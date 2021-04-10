@@ -12,14 +12,19 @@ class CountdownTimer {
   }
   
   start() {
-    const targetTime = this.targetDate.getTime();
+    this.timeCounter();
     setInterval(() => {
-      const currentTime = Date.now();
+      this.timeCounter();
+    }, 1000);
+    return 'Timer is working';
+  }
+
+  timeCounter() {
+    const targetTime = this.targetDate.getTime();
+    const currentTime = Date.now();
       const deltaTime = targetTime - currentTime;
       const time = this.getTimeComponents(deltaTime);
       this.onTick(time);
-    }, 1000);
-    return 'Timer is working';
   }
 
   getTimeComponents(time) {
