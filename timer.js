@@ -18,7 +18,8 @@ class CountdownTimer {
       const deltaTime = targetTime - currentTime;
       const time = this.getTimeComponents(deltaTime);
       this.onTick(time);
-    }, 1000)
+    }, 1000);
+    return 'Timer is working';
   }
 
   getTimeComponents(time) {
@@ -49,7 +50,3 @@ function updateClockCounter({days, hours, mins, secs}) {
 const timer1 = new CountdownTimer('#timer-1', new Date('Jun 22 2021'), updateClockCounter);
 console.log(timer1.start());
 
-
-secsEl.addEventListener('DOMCharacterDataModified', () => {
-  console.log('onchange');
-})
