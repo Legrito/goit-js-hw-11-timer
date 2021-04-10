@@ -48,3 +48,8 @@ function updateClockCounter({days, hours, mins, secs}) {
 
 const timer1 = new CountdownTimer('#timer-1', new Date('Jun 22 2021'), updateClockCounter);
 console.log(timer1.start());
+
+
+secsEl.addEventListener('DOMCharacterDataModified', () => {
+  console.log('onchange');
+})

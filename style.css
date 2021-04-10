@@ -1,4 +1,10 @@
+body {
+    margin: 0;
+}
+
 .timer {
+    margin: 0;
+    padding: 0;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -7,6 +13,9 @@
     text-align: center;
 
     font-family: 'Josefin Sans', sans-serif;
+
+    background: url('./bg.jpg');
+    background-size: cover;
 }
 
 .field {
@@ -19,6 +28,8 @@
 }
 
 .value {
+    position: relative;
+    z-index: 100;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,7 +40,19 @@
     border: 2px solid tomato;
     border-radius: 20px;
 
-    background-color: tomatos;
+    
+}
+
+.value::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    border: 2px solid tomato;
+    border-radius: 20px;
+    background: linear-gradient(tomato, white);
+    opacity: 40%;
 }
 
 .label {
